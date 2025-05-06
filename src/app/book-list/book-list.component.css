@@ -1,0 +1,29 @@
+
+.book-cover {
+    max-height: 200px;
+    /* Choose one: */
+    /* object-fit: contain; */ /* Shows whole image, might leave space */
+    object-fit: cover;   /* Fills space, might crop image */
+  
+    margin-top: 10px;
+    width: auto; /* Adjust width automatically */
+    max-width: 80%; /* Prevent image from becoming too wide */
+    margin-left: auto; /* Center the image horizontally */
+    margin-right: auto;
+    display: block; /* Needed for margin auto centering */
+    border: 1px solid #eee; /* Add a very light border */
+  }
+  
+  .card {
+    border: 1px solid #ddd; /* Simple border for cards */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+  }
+  
+  .book-list-container {
+      padding: 15px; /* Add some padding around the list */
+  }
+  .card:hover {
+    transform: translateY(-3px); /* Lift the card slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Increase shadow slightly */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* Smooth transition */
+  }

@@ -1,0 +1,21 @@
+
+<header class="app-header bg-dark text-white p-3 mb-4">
+  <h1>{{ title }}</h1>
+  <p>Displaying Mock Book Data</p>
+</header>
+
+<main class="container"> <!-- Bootstrap container for centering content -->
+  <!--
+    Use the book-list component:
+    - <app-book-list> is the selector from book-list.component.ts
+    - [books]="booksFromService" passes the data from the AppComponent's
+      'booksFromService' property into the BookListComponent's '@Input() books' property.
+  -->
+  <app-book-list [books]="booksFromService"></app-book-list>
+
+</main>
+
+<footer class="app-footer text-center text-muted mt-5">
+  <p>© 2025 Ghazanfar Ali - Assignment 6</p>
+</footer>
+
