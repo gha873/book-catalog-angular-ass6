@@ -1,59 +1,83 @@
-# BookCatalog
+# [Book Catalog - Angular App] - Assignment 6
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+This project is an Angular application built for  CSCI E31 - Assignment #6. The goal of this assignment was to demonstrate proficiency in using the Angular CLI to create a project, create components, pass data into them, and display mock data.
 
-## Development server
+**Live Demo :** (https://stackblitz.com/~/github.com/gha873/book-catalog-angular-ass6)
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
+*   Displays a list of books (or your chosen data type).
+*   Uses mock data hardcoded within an Angular service.
+*   Implements a parent component (`AppComponent`) and a nested child component (`BookListComponent`) to display items.
+*   Utilizes `*ngFor` structural directive to render a list of items.
+*   Basic styling using Bootstrap 5 for a clean and decent interface.
+*   Configured for deployment on Heroku.
+
+## Data Structure
+
+The mock data for books follows this structure:
+
+```typescript
+// src/app/book.model.ts
+export interface Book {
+  id: number;
+  title: string;
+  author: string;
+  yearPublished: number;
+  coverImageUrl?: string; // Optional
+}
+
+## Project Structure
+
+```
+src/app/
+│
+├── app.component.ts/.html/.css         # Main application component - fetches data and passes it to BookListComponent
+├── book-list/
+│   └── book-list.component.ts/.html/.css   # Displays the list of books using *ngFor
+├── book.model.ts                       # Defines the Book interface
+├── book.service.ts                     # Provides mock book data
+│
+src/index.html                          # Main HTML file with Bootstrap CDN
+src/styles.css                          # Global styles
+angular.json                            # Angular CLI configuration
+package.json                            # Project dependencies and scripts
+server.js                               # Express server to serve Angular build (for Heroku)
+Procfile                                # Defines process type for Heroku
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Prerequisites
 
-## Code scaffolding
+- Node.js (version 18.x or 20.x)
+- npm (version 10.x)
+- Angular CLI (version 17.x)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Getting Started (Local Development)
 
 ```bash
-ng generate --help
+git clonehttps://github.com/HarvardDCENode/assignment-6-angular-gha873
+cd  assignment-6-angular-gha873
+npm install
+ng serve -o
 ```
 
-## Building
+> The application will open automatically in your browser at `http://localhost:4200/`.
 
-To build the project run:
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Assignment Requirements Checklist
 
-## Running unit tests
+- ✅ Angular CLI used for project creation
+- ✅ Additional component `book-list.component` added
+- ✅ Component nested within `app.component`
+- ✅ Uses `*ngFor` to display multiple items
+- ✅ No unused component files
+- ✅ Follows course coding standards
+- ✅ Displays data from a hardcoded structure
+- ✅ Implements 'Read' operation only
+- ✅ Mock data served via Angular service (`book.service.ts`)
+- ✅ Clear and easy-to-use UI
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Author
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Ghazanfar Ali** - gha873
